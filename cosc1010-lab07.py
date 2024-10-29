@@ -1,8 +1,8 @@
-# Your Name Here
+# Matthew Pikal
 # UWYO COSC 1010
 # Submission Date
-# Lab XX
-# Lab Section: 
+# Lab 07
+# Lab Section: 11
 # Sources, people worked with, help given to: 
 # your
 # comments
@@ -18,6 +18,13 @@
 # You will continue to prompt the user until a proper integer value is entered
 
 factorial = 1
+upper_bound = int(input('Please give an upper bound'))
+if upper_bound>0:
+    
+    while 0<upper_bound:
+        factorial = factorial * upper_bound
+        upper_bound += -1
+
 
 print(f"The result of the factorial based on the given bound is {factorial}")
 
