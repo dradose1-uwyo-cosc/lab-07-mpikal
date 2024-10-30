@@ -18,9 +18,11 @@
 # You will continue to prompt the user until a proper integer value is entered
 
 factorial = 1
-upper_bound = int(input('Please give an upper bound'))
+message = input('Please give an upper bound') 
+while message.isnumeric() != True:
+    message = input('Please enter a valid number')
+upper_bound = int(message)
 if upper_bound>0:
-    
     while 0<upper_bound:
         factorial = factorial * upper_bound
         upper_bound += -1
@@ -45,7 +47,23 @@ print("*"*75)
 # The sum should start at 0 
 
 num_sum = 0 
-
+interger = ''
+while interger.lower() != 'exit':
+    interger = input('Please enter an interger')
+    if interger.lower() == 'exit':
+        break
+    if interger[0] == '-':
+        interger = int(interger) * -1
+        interger = str(interger)
+        if interger.isdigit() == True:
+            num_sum = num_sum - int(interger)
+        else: 
+            interger = input('Please enter a valid interger or enter "exit" to calculate now')
+    else:
+        if interger.isnumeric() == True:
+            num_sum += int(interger)
+        else: 
+             interger = input('Please enter a valid interger or enter "exit" to calculate now')
 print(f"Your final sum is {num_sum}")
 
 print("*"*75)
@@ -66,4 +84,27 @@ print("*"*75)
 # Print the result of the equation
 # Again, loop through prompting the user for input until `exit` in any casing is input 
 
+mess = input('Please enter your calculation').replace(' ', '')
+operators = ['+', '-', '/', '*', '%']
+for operator in operators:
+    if operator in mess:
+        numbers = mess.split(operator)
+        x = int(numbers[0])
+        y = int(numbers[1])
+        if numbers[0].isnumeric() == True and numbers [1].isnumeric() == True:
+            if operator == '+':
+                print(x+y)
+            elif operator == '-':
+                print(x-y)
+            elif operator == '/':
+                print(x/y)
+            elif operator == '*':
+                print(x*y)
+            else:
+                print(x%y)
+
+
+            
+
+    
         
